@@ -1,0 +1,58 @@
+<div class="menu-wrapper">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><button [routerLink]="['/categories/burgers']" class="sidebar-btn">Burgerler</button></li>
+      <li><button [routerLink]="['/categories/sandwiches']" class="sidebar-btn active">Aperatifler</button></li>
+      <li><button class="sidebar-btn">İçecekler</button></li>
+      <li><button class="sidebar-btn">Tatlılar</button></li>
+      <li><button class="sidebar-btn">Soslar</button></li>
+
+    </ul>
+  </aside>
+
+ <!-- Main Content -->
+  <main class="menu-content">
+    <div class="category-title">
+      <h2>Aperatifler</h2>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="/patates-kızartması.jpg" alt="">
+        <h3 class="product-title">Patates Kızartması</h3>
+        <p class="product-description">Altın renginde kızartılmış, dışı çıtır içi yumuşak patates dilimleri. Yanında ketçap, mayonez veya isteğe göre soslarla servis edilir.</p>
+        <div class="product-footer">
+          <span class="product-price">₺120,00</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/tavuk parçaları.jpg" alt="">
+        <h3 class="product-title">Tavuk Parçaları</h3>
+        <p class="product-description">Özel baharatlarla marine edilmiş, dışı çıtır içi yumuşak tavuk parçaları. Yanında isteğe göre soslarla servis edilir.</p>
+        <div class="product-footer">
+          <span class="product-price">₺165,00</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/hot-dog.jpg" alt="">
+        <h3 class="product-title">Sosisli Sandviç</h3>
+        <p class="product-description">Izgara edilmiş sosis, taze sandviç ekmeği içinde; üzerine ketçap, mayonez, hardal ve isteğe göre turşu ile hazırlanır.</p>
+        <div class="product-footer">
+          <span class="product-price">₺180,00</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/mozarella-sticks.jpg" alt="">
+        <h3 class="product-title">Mozarella Çubukları</h3>
+        <p class="product-description">Dışı çıtır pane kaplı, içi akışkan mozzarella peyniriyle hazırlanan nefis atıştırmalık. Yanında isteğe göre soslarla servis edilir</p>
+        <div class="product-footer">
+          <span class="product-price">₺145,00</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

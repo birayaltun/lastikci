@@ -49,8 +49,8 @@
 }
 
 .headerBottom .logo img {
-  margin-left: 30px;
-  width: 120px;
+  margin-left: 40px;
+  width: 110px;
   height: auto;
 }
 
@@ -58,12 +58,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
-.menu-link .fa-utensils{
-  width: 10px;
-  height: auto;
+.menu-link i {
+  font-size: 20px;
   color: #025928;
+  margin-right: 40px;
 }
 
 .menu-button {
@@ -71,7 +72,7 @@
   color: #025928;
   font-size: 25px;
   text-decoration: none;
-  margin-right: 50px;
+  margin-right: 5px;
 }
 
 .popular-slider {
@@ -92,7 +93,7 @@
 
 .swiper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .swiper-wrapper {
@@ -102,14 +103,15 @@
   padding: 0 20px;
 }
 
+
 .swiper-slide {
   flex: 0 0 auto;
   /* Kart sabit genişlik */
 }
 
 .product-card {
-  width: 300px;
-  height: 200px;
+  width: 440px;
+  height: 220px;
   display: flex;
   background: #fff;
   border-radius: 10px;
@@ -119,7 +121,7 @@
 
 .product-img {
   height: 200px;
-  width: 150px;
+  width: 300px;
   object-fit: cover;
   border-radius: 8px;
   margin-right: 12px;
@@ -132,12 +134,12 @@
 }
 
 .product-info h4 {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 15px;
+  font-size: 22px;
 }
 
 .product-info .description {
-  margin-top: 4px;
+  margin-top: 0px;
   font-size: 11px;
   color: #555;
 }
@@ -238,24 +240,30 @@
     height: auto;
   }
 
+  .menu-link i {
+    font-size: 16px;
+    color: #025928;
+    margin-right: 20px;
+  }
+
   .menu-button {
     font-weight: 500;
     color: #025928;
-    font-size: 25px;
+    font-size: 22px;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 3px;
   }
 
   .swiper-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 150px;
+    gap: 300px;
     padding: 0 20px;
   }
 
   .product-card {
-    width: 210px;
-    height: 140px;
+    width: 350px;
+    height: 150px;
     display: flex;
     background: #fff;
     border-radius: 10px;
@@ -264,8 +272,8 @@
   }
 
   .product-img {
-    height: 120px;
-    width: 90px;
+    height: 140px;
+    width: 210px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 12px;

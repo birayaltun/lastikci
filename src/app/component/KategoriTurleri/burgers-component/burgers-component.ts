@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-fastfood-component',
   standalone: true,
   imports: [RouterModule, CommonModule],
-  templateUrl: './fastfood-component.html',
-  styleUrls: ['./fastfood-component.css'],
+  templateUrl: './burgers-component.html',
+  styleUrls: ['./burgers-component.css'],
 })
-export class FastfoodComponent implements AfterViewInit {
+export class Burgerscomponent implements AfterViewInit {
 
     selectedProduct: any = null;
 

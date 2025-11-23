@@ -5,10 +5,10 @@ import { AfterViewInit } from '@angular/core';
 @Component({
   selector: 'app-sweet-component',
   imports: [RouterModule,CommonModule],
-  templateUrl: './sweet-component.html',
-  styleUrl: './sweet-component.css',
+  templateUrl: './sandwiches-component.html',
+  styleUrl: './sandwiches-component.css',
 })
-export class SweetComponent implements AfterViewInit{
+export class Sandwichescomponent implements AfterViewInit{
 
   ngAfterViewInit() {
     const cards = document.querySelectorAll('.product-card');

@@ -12,11 +12,10 @@ import path from 'path';
 })
 export class CategoriesComponent {
   categories = [
-    { id: 1, name: 'Tatlılar',pathUrl:"sweets" },
-    { id: 2, name: 'Fast Food',pathUrl:"fastfoods" },
-    { id: 3, name: 'İçecekler',pathUrl:"drinks" },
-    { id: 4, name: 'Salatalar', pathUrl:"salads"},
-    { id: 5, name: 'Çorbalar',pathUrl:"soups" },
-    { id: 6, name: 'Pizza' ,pathUrl:"pizzas" }
+    { id: 1, name: 'Burgerler',pathUrl:"burgers" },
+    { id: 3, name: 'Aperatifler',pathUrl:"snacks" },
+    { id: 4, name: 'İçecekler', pathUrl:"drinks"},
+    { id: 5, name: 'Tatlılar',pathUrl:"sweets" },
+    { id: 6, name: 'Soslar' ,pathUrl:"sauces" }
   ];
 }
