@@ -7,9 +7,10 @@ import { Burgerscomponent } from "./component/KategoriTurleri/burgers-component/
 
 
 export const routes: Routes = [
+  
     { path: 'categories', component: CategoriesComponent },
     {path:"categories/burgers",component:Sandwichescomponent},
-    {path:"categories/sandwiches",component:Burgerscomponent}
+    {path:"categories/snacks",component:Burgerscomponent}
   //   { path: '', redirectTo: 'categories', pathMatch: 'full' },
   // // Diğer route’lar buraya
   // { path: '**', redirectTo:'categories' } // bilinmeyen URL’leri categories’e yönlendir
