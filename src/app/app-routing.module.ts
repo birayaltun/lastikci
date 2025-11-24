@@ -7,7 +7,7 @@ import { Burgerscomponent } from "./component/KategoriTurleri/burgers-component/
 
 
 export const routes: Routes = [
-  
+   { path: '', redirectTo: 'categories', pathMatch: 'full' },
     { path: 'categories', component: CategoriesComponent },
     {path:"categories/burgers",component:Sandwichescomponent},
     {path:"categories/snacks",component:Burgerscomponent}
