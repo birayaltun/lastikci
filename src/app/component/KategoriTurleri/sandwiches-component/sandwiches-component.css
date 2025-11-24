@@ -150,7 +150,7 @@ main {
   .sidebar {
     width: 100%;
     display: flex;
-    overflow-x:hidden;
+    overflow-x: hidden;
     margin-bottom: 20px;
   }
 
@@ -170,6 +170,25 @@ main {
 }
 
 @media (max-width: 600px) {
+  .menu-wrapper {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    min-width: auto;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    margin-bottom: 20px;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none;
+    /* Chrome + Safari scrollbar gizle */
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
     overflow-x: hidden;
