@@ -22,8 +22,8 @@ export class HeaderComponent implements AfterViewInit   {
     // Slider başlat
     new Swiper('.swiper', {
       modules: [FreeMode],
-      slidesPerView: 2.5,
-      spaceBetween: -120,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
       freeMode: true // mouse ve touch drag
     });
   }

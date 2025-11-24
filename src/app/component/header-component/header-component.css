@@ -77,7 +77,7 @@
 
 .popular-slider {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 20px 0;
   background: #f9f9f9;
   -ms-overflow-style: none;
@@ -291,10 +291,26 @@
     margin-right: 3px;
   }
 
+  .popular-slider {
+    width: 100%;
+    overflow-x: hidden;
+    /* mobilde smooth swipe */
+    padding: 20px 0;
+    background: #f9f9f9;
+    /* IE / Edge scrollbar gizle */
+    scrollbar-width: none;
+    /* Firefox scrollbar gizle */
+  }
+
+  .popular-slider::-webkit-scrollbar {
+    display: none;
+    /* Chrome + Safari scrollbar gizle */
+  }
+
   .swiper-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 300px;
+    gap: 0px;
     padding: 0 20px;
   }
 
