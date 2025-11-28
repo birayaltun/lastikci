@@ -1,0 +1,60 @@
+<div class="menu-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li>
+                <button [routerLink]="['/categories/land']" [ngClass]="{ 'active': currentCategory === 'land' }"
+                    class="sidebar-btn">
+                    Arazi
+                </button>
+            </li>
+
+            <li>
+                <button [routerLink]="['/categories/race']" [ngClass]="{ 'active': currentCategory === 'race' }"
+                    class="sidebar-btn">
+                    Yarış
+                </button>
+            </li>
+
+            <li>
+                <button [routerLink]="['/categories/fourseason']"
+                    [ngClass]="{ 'active': currentCategory === 'fourseason' }" class="sidebar-btn">
+                    4 Mevsim
+                </button>
+            </li>
+
+            <li>
+                <button [routerLink]="['/categories/summer']" [ngClass]="{ 'active': currentCategory === 'summer' }"
+                    class="sidebar-btn">
+                    Yaz
+                </button>
+            </li>
+
+            <li>
+                <button [routerLink]="['/categories/winter']" [ngClass]="{ 'active': currentCategory === 'winter' }"
+                    class="sidebar-btn">
+                    Kış
+                </button>
+            </li>
+
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="menu-content">
+        <div class="category-title">
+            <h2>Aperatifler</h2>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card" *ngFor="let p of products">
+                <img [src]="p.img" alt="">
+                <h3 class="product-title">{{ p.title }}</h3>
+                <p class="product-description">{{ p.desc }}</p>
+                <div class="product-footer">
+                    <span class="product-price">₺{{ p.price }}</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

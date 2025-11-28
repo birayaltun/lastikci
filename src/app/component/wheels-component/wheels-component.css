@@ -54,7 +54,6 @@ main {
 
 .sidebar-btn:hover {
   background-color: #428533;
-  /* soft orange hover */
   color: #f0f0f0;
 }
 
@@ -70,6 +69,9 @@ main {
   padding: 15px;
   border-radius: 8px;
   flex: 1;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
 }
 
 /* Başlık */
@@ -101,19 +103,19 @@ main {
 }
 
 .product-card img {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  max-width: 250px;
   border-radius: 8px;
   margin-bottom: 20px;
-  width: 250px;
-  height: auto;
 }
 
+/* Hover */
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Textler */
 .product-title {
   margin: 0 0 10px 0;
   font-size: 1.5rem;
@@ -142,32 +144,24 @@ main {
 }
 
 /* Responsive */
-@media (max-width: 1000px) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 1050px) {
   .menu-wrapper {
     flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .sidebar {
     width: 100%;
     display: flex;
-    overflow-x: hidden;
+    overflow-x: auto;
     margin-bottom: 20px;
   }
 
   .sidebar ul {
-    display: flex;
     flex-direction: row;
     gap: 10px;
-  }
-
-  .sidebar-btn {
-    flex-shrink: 0;
   }
 
   .products-grid {
@@ -177,36 +171,23 @@ main {
 
 @media (max-width: 600px) {
   .menu-wrapper {
-    flex-direction: column;
-    overflow-x: hidden;
-  }
-
-  .sidebar {
     width: 100%;
-    display: flex;
-    min-width: auto;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    margin-bottom: 20px;
+    max-width: 100%;
+    padding: 0 10px;
   }
 
-  .sidebar::-webkit-scrollbar {
-    display: none;
-    /* Chrome + Safari scrollbar gizle */
+  .menu-content {
+    max-width: 100%;
+    width: 100%;
   }
 
   .products-grid {
     grid-template-columns: 1fr;
-    overflow-x: hidden;
   }
 
   .product-card img {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    width: 270px;
-    height: auto;
+    max-width: 270px;
+    width: 100%;
   }
 }
 
@@ -214,9 +195,7 @@ main {
 .products-grid .product-card {
   opacity: 0;
   transform: translateY(20px);
-  /* Başlangıçta biraz aşağıda */
   animation: slideUp 0.5s ease-out forwards;
-  /* Animasyonu uygula */
 }
 
 @keyframes slideUp {
@@ -224,7 +203,6 @@ main {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);

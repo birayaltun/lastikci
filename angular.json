@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "QRMenu": {
+    "WHEELS": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "QRMenu:build:production"
+              "buildTarget": "WHEELS:build:production"
             },
             "development": {
-              "buildTarget": "QRMenu:build:development"
+              "buildTarget": "WHEELS:build:development"
             }
           },
           "defaultConfiguration": "development"

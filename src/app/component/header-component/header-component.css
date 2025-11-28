@@ -7,8 +7,8 @@
 
 .header-top {
   background: -webkit-gradient(linear, left bottom, right bottom,
-      color-stop(0, #025928),
-      color-stop(1, #428533));
+      color-stop(0, #000),
+      color-stop(1, #910a0a));
   color: #fff;
   overflow: hidden;
   white-space: nowrap;
@@ -21,7 +21,7 @@
 }
 
 .marquee span {
-  font-size: 25px;
+  font-size: 20px;
   color: #fff;
   display: inline-block;
   padding-left: 100%;
@@ -54,16 +54,22 @@
   height: auto;
 }
 
-.menu-link {
+.menu-links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.menu-link i {
+.menu-links ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-links ul li {
+  list-style: none;
   font-size: 20px;
-  color: #025928;
+  color: #000;
   margin-right: 40px;
 }
 
