@@ -4,9 +4,13 @@ import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'; // 👈 bunu ekle
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WheelsComponent } from './component/wheels-component/wheels-component';
+import { RoadassistanceComponent } from './component/roadassistance-component/roadassistance-component';
+import { ContactComponent } from './component/contact-component/contact-component';
+import { MainmenuComponent } from './component/mainmenu-component/mainmenu-component';
+
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent,WheelsComponent,RouterOutlet,RouterModule,FontAwesomeModule],
+  imports: [HeaderComponent,WheelsComponent,RouterOutlet,RouterModule,FontAwesomeModule,RoadassistanceComponent,ContactComponent,MainmenuComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
