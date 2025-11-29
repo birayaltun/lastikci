@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 900px;
   margin: auto;
+
   overflow: hidden;
 }
 
@@ -18,26 +19,33 @@
 
 .slide img {
   display: block;
+  object-fit: fill;
   pointer-events: none;
 }
 
 /* Dots (Noktalar) */
+/* Dots slider üzerine gelecek şekilde */
 .dots {
+  margin-right: 170px;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
   gap: 8px;
+  position: absolute;   /* slider container’a göre absolute */
+  bottom: 30px;         /* slider’ın altından 10px yukarıda */
+  left: 47%;            /* ortala */
+  transform: translateX(-50%);
+  z-index: 10;          /* resimlerin üstünde */
 }
 
 .dot {
   width: 12px;
   height: 12px;
-  background: #ccc;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s;
+   background: #ccc;
 }
 
 .dot.active {
-  background: #333;
+  background: black;
 }
