@@ -14,15 +14,6 @@ export class MainmenuComponent implements AfterViewInit {
   if (initSlider) {
       initSlider();  // script.js içindeki fonksiyonu çağırıyoruz
     }
- 
-    
-      
-
-      
     }
-
-
-
-  
 }
  
