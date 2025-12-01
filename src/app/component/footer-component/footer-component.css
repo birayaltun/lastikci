@@ -1,5 +1,9 @@
 .footer {
-    background-color: #072622;
+    background: linear-gradient(to right,
+            #000000 0%,
+            #330505 35%,
+            #610808 65%,
+            #910a0a 100%);
     color: #eeeeee;
     padding: 30px 20px;
     font-family: "Montserrat", sans-serif;
@@ -17,7 +21,7 @@
 }
 
 .footer-logo img {
-    width: 100px;
+    width: 120px;
 }
 
 .footer-info {
@@ -46,6 +50,36 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+
+    .footer {
+        color: #eeeeee;
+        padding: 5px 20px;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-info {
+        margin-top: 0px;
+        flex: 1;
+        min-width: 280px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .footer-logo img {
+        width: 120px;
+    }
+
     .footer-container {
         flex-direction: column;
     }

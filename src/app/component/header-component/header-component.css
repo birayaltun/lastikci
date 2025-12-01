@@ -281,87 +281,28 @@
   }
 
   .headerBottom .logo img {
-    margin-left: 30px;
-    width: 90px;
+    margin-left: 10px;
+    width: 75px;
     height: auto;
   }
 
-  .menu-link i {
-    font-size: 16px;
-    color: #025928;
-    margin-right: 20px;
-  }
-
-  .menu-button {
-    font-weight: 500;
-    color: #025928;
-    font-size: 22px;
-    text-decoration: none;
-    margin-right: 3px;
-  }
-
-  .popular-slider {
-    width: 100%;
-    overflow-x: hidden;
-    /* mobilde smooth swipe */
-    padding: 20px 0;
-    background: #f9f9f9;
-    /* IE / Edge scrollbar gizle */
-    scrollbar-width: none;
-    /* Firefox scrollbar gizle */
-  }
-
-  .popular-slider::-webkit-scrollbar {
-    display: none;
-    /* Chrome + Safari scrollbar gizle */
-  }
-
-  .swiper-wrapper {
+  .menu-links {
     display: flex;
     flex-direction: row;
-    gap: 0px;
-    padding: 0 20px;
-  }
-
-  .product-card {
-    width: 350px;
-    height: 150px;
-    display: flex;
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .product-img {
-    height: 140px;
-    width: 210px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 12px;
-  }
-
-  .product-info {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
   }
 
-  .product-info h4 {
-    margin-top: 10px;
-    font-size: 15px;
+  .menu-links ul {
+    display: flex;
+    flex-direction: row;
   }
 
-  .product-info .description {
-    margin-top: 4px;
-    font-size: 9px;
-    color: #555;
+  .menu-links ul li {
+    list-style: none;
+    font-size: 12px;
+    color: #000;
+    margin-right: 0px;
   }
 
-  .product-info .price {
-    margin-top: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #e60000;
-  }
 }
