@@ -4,6 +4,7 @@
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-color: #000;
 }
 
 .slider {
@@ -160,6 +161,7 @@
   width: auto;
   height: auto;
   display: flex;
+  margin-bottom:50px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
