@@ -1,4 +1,3 @@
-
 <header class="company-header">
 
   <div class="header-top">
@@ -9,17 +8,26 @@
 
   <div class="headerBottom">
 
-    <div  class="logo">
-      <img   src="/canlogo.png" [routerLink]="['/categories']" style="cursor:pointer;" alt="LOGO">
+    <div class="logo">
+      <img src="/canlogo.png" [routerLink]="['/categories']" style="cursor:pointer;" alt="LOGO">
     </div>
 
-     <div class="menu-links">
+    <!-- HAMBURGER MENU ICON -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- MENU LINKS -->
+    <div class="menu-links" [class.open]="isMenuOpen">
       <ul>
-        <li [routerLink]="['/anasayfa']">Anasayfa</li>
-        <li [routerLink]="['/lastikler']">Lastikler</li>
-        <li [routerLink]="['/yolyardım']">Yol Yardım</li>
-        <li [routerLink]="['/iletisim']">İletişim</li>
+        <li [routerLink]="['/anasayfa']" (click)="closeMenu()">Anasayfa</li>
+        <li [routerLink]="['/lastikler']" (click)="closeMenu()">Lastikler</li>
+        <li [routerLink]="['/yolyardım']" (click)="closeMenu()">Yol Yardım</li>
+        <li [routerLink]="['/iletisim']" (click)="closeMenu()">İletişim</li>
       </ul>
-     </div>
+    </div>
+
   </div>
 </header>

@@ -5,15 +5,15 @@ declare var initSlider: any; // script.js içindeki fonksiyon
   selector: 'app-mainmenu-component',
   templateUrl: './mainmenu-component.html',
   styleUrls: ['./mainmenu-component.css'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class MainmenuComponent implements AfterViewInit {
 
-    ngAfterViewInit() {
+  ngAfterViewInit() {
 
-  if (initSlider) {
+    if (initSlider) {
       initSlider();  // script.js içindeki fonksiyonu çağırıyoruz
     }
-    }
+  }
 }
- 
+
