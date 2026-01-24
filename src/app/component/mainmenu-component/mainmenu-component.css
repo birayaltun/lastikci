@@ -284,9 +284,9 @@
 
   .btn {
     display: flex;
-    height: 25px;
-    width: 100px;
-    font-size: 12px;
+    height: 40px;
+    width: 140px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: auto;
   }
@@ -346,6 +346,13 @@
 
   .card3 {
     background-image: url('/card3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+    .card4 {
+    background-image: url('/card4.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
