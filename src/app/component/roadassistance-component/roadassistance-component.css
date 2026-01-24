@@ -89,7 +89,7 @@
 }
 
 .services-info h4 {
-    color :#d32f2f;
+    color: #d32f2f;
     font-size: 30px;
     font-weight: 800;
     line-height: 1.2;
@@ -102,4 +102,106 @@
     line-height: 1.7;
     margin: auto;
     padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .helpcontainer {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        padding-top: 80px;
+        padding-left: 30px;
+        padding-bottom: 50px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+    }
+
+    .title {
+        margin-right: auto;
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: 600;
+        border-left: 5px solid #d32f2f;
+        /* Mavi çizgi */
+        padding-left: 10px;
+        margin-bottom: 25px;
+    }
+
+    .content {
+        font-size: 20px;
+        font-weight: 450;
+        line-height: 1.6;
+        color: rgb(255, 255, 255);
+    }
+
+    .content a {
+        color: #d32f2f;
+        text-decoration: none;
+    }
+
+    .content a:hover {
+        text-decoration: underline;
+    }
+
+    .services {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        background-color: #000000;
+        color: rgb(0, 0, 0);
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 30px;
+    }
+
+    .services-box {
+        background-color: #ffffff;
+        height: 200px;
+        border-radius: 10px;
+        border: 5px solid transparent;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    .services-box:hover {
+        background-color: #f0f0f0;
+        color: black;
+        transform: scale(1.01);
+    }
+
+    .services-box .services-info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        max-height: 200px;
+        justify-content: left;
+        align-items: baseline;
+        padding: 10px 20px;
+    }
+
+    .services-info h4 {
+        color: #d32f2f;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+
+    .services-info p {
+        font-size: 15px;
+        font-weight: 600;
+        max-height: 100px;
+        line-height: 1.5;
+    }
 }
