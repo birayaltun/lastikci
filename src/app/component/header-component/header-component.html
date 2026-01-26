@@ -9,7 +9,7 @@
   <div class="headerBottom">
 
     <div class="logo">
-      <img src="/canlogo.png" [routerLink]="['/categories']" style="cursor:pointer;" alt="LOGO">
+      <img src="/canlogo.png" [routerLink]="['/anasayfa']" (click)="closeMenu() " style="cursor:pointer;" alt="LOGO">
     </div>
 
     <!-- HAMBURGER MENU ICON -->
@@ -23,7 +23,7 @@
     <div class="menu-links" [class.open]="isMenuOpen">
       <ul>
         <li [routerLink]="['/anasayfa']" (click)="closeMenu()">Anasayfa</li>
-        <li [routerLink]="['/wheels', 'categories', 'land']" (click)="closeMenu()">Lastikler</li>
+        <li [routerLink]="['/wheels', 'categories', 'lassa']" (click)="closeMenu()">Lastikler</li>
         <li [routerLink]="['/yolyardım']" (click)="closeMenu()">Yol Yardım</li>
         <li [routerLink]="['/iletisim']" (click)="closeMenu()">İletişim</li>
       </ul>

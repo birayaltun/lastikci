@@ -3,37 +3,37 @@
     <aside class="sidebar">
         <ul>
             <li>
-                <button   [routerLink]="['/wheels', 'categories', 'land']" [ngClass]="{ 'active': currentCategory === 'land' }"
-                    class="sidebar-btn">
-                    Arazi
+                <button [routerLink]="['/wheels', 'categories', 'lassa']"
+                    [ngClass]="{ 'active': currentCategory === 'lassa' }" class="sidebar-btn">
+                    Lassa
                 </button>
             </li>
 
             <li>
-                    <button   [routerLink]="['/wheels', 'categories', 'race']" [ngClass]="{ 'active': currentCategory === 'race' }"
-                    class="sidebar-btn">
-                    Yarış
+                <button [routerLink]="['/wheels', 'categories', 'continental']"
+                    [ngClass]="{ 'active': currentCategory === 'continental' }" class="sidebar-btn">
+                    Continental
                 </button>
             </li>
 
             <li>
-                <button [routerLink]="['/wheels', 'categories', 'fourseason']"
-                    [ngClass]="{ 'active': currentCategory === 'fourseason' }" class="sidebar-btn">
-                    4 Mevsim
+                <button [routerLink]="['/wheels', 'categories', 'laufenn']"
+                    [ngClass]="{ 'active': currentCategory === 'laufenn' }" class="sidebar-btn">
+                    Laufenn
                 </button>
             </li>
 
             <li>
-                <button [routerLink]="['/wheels', 'categories', 'summer']" [ngClass]="{ 'active': currentCategory === 'summer' }"
-                    class="sidebar-btn">
-                    Yaz
+                <button [routerLink]="['/wheels', 'categories', 'matador']"
+                    [ngClass]="{ 'active': currentCategory === 'matador' }" class="sidebar-btn">
+                    Matador
                 </button>
             </li>
 
             <li>
-                <button [routerLink]="['/wheels', 'categories', 'winter']" [ngClass]="{ 'active': currentCategory === 'winter' }"
-                    class="sidebar-btn">
-                    Kış
+                <button [routerLink]="['/wheels', 'categories', 'goodyear']"
+                    [ngClass]="{ 'active': currentCategory === 'goodyear' }" class="sidebar-btn">
+                    Good Year
                 </button>
             </li>
 
@@ -43,7 +43,7 @@
     <!-- Main Content -->
     <main class="menu-content">
         <div class="category-title">
-<h2>{{ pageTitle }}</h2>
+            <h2>{{ pageTitle }}</h2>
         </div>
 
         <div class="products-grid">

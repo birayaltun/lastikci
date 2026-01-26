@@ -5,56 +5,59 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-wheels-component',
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './wheels-component.html',
   styleUrl: './wheels-component.css',
 })
-export class WheelsComponent  {
-currentCategory: string = '';
+export class WheelsComponent {
+  currentCategory: string = '';
   products: any[] = [];
 
- //titles
- categoryTitles: { [key: string]: string } = {
-  land: 'Arazi',
-  race: 'Yarış',
-  fourseason: '4 Mevsim',
-  summer: 'Yaz',
-  winter: 'Kış'
-};
-pageTitle: string = '';
+  //titles
+  categoryTitles: { [key: string]: string } = {
+    lassa: 'Lassa',
+    continental: 'Continental',
+    laufenn: 'Laufenn',
+    matador: 'Matador',
+    goodyear: 'Good Year'
+  };
+  pageTitle: string = '';
 
 
-    // TÜM ÜRÜNLER
- categories: { [key: string]: any[] } = {
-  land: [
-    { title: "Arazi Lastiği 1", price: 1200, img: "/arazi1.jpg", desc: "..." },
-        { title: "Arazi Lastiği 2", price: 1200, img: "/arazi1.jpg", desc: "..." },
-        { title: "Arazi Lastiği 3", price: 1200, img: "/arazi1.jpg", desc: "..." },
-                { title: "Arazi Lastiği 4", price: 1200, img: "/arazi1.jpg", desc: "..." }
+  // TÜM ÜRÜNLER
+  categories: { [key: string]: any[] } = {
+    lassa: [
+      { title: "Snoways 4", price: 0, img: "/lassasnoways4.png", desc: "..." },
+      { title: "Revola", price: 0, img: "/revola.png", desc: "..." },
+      { title: "Greenways", price: 0, img: "/greenways.png", desc: "..." },
+      { title: "Iceways 2", price: 0, img: "/iceways2.png", desc: "..." },
+      { title: "Multiways 2", price: 0, img: "/multiways.png", desc: "..." }
 
+    ],
+    continental: [
+      { title: "WinterContact ", price: 0, img: "/wintercontact.png", desc: "..." },
+      { title: "UltraContact ", price: 0, img: "/ultracontact.png", desc: "..." },
+      { title: "EcoContact 6 ", price: 0, img: "/ecocontact6.png", desc: "..." },
+      { title: "SportContact 7 ", price: 0, img: "/sportcontact7.png", desc: "..." }
+    ],
+    laufenn: [
+      { title: "4 Mevsim", price: 1300, img: "/4.jpg", desc: "..." }
+    ],
+    matador: [
+      { title: "Yaz Lastiği", price: 1100, img: "/yaz.jpg", desc: "..." }
+    ],
+    goodyear: [
+      { title: "Kış Lastiği", price: 1600, img: "/kış.jpg", desc: "..." }
+    ]
+  };
 
-  ],
-  race: [
-    { title: "Yarış Lastiği 1", price: 1800, img: "/race1.jpg", desc: "..." }
-  ],
-  fourseason: [
-    { title: "4 Mevsim", price: 1300, img: "/4.jpg", desc: "..." }
-  ],
-  summer: [
-    { title: "Yaz Lastiği", price: 1100, img: "/yaz.jpg", desc: "..." }
-  ],
-  winter: [
-    { title: "Kış Lastiği", price: 1600, img: "/kış.jpg", desc: "..." }
-  ]
-};
+  constructor(private route: ActivatedRoute) { }
 
- constructor(private route: ActivatedRoute) {}
-
-   ngOnInit() {
+  ngOnInit() {
     // URL değişince tetiklenir
     this.route.paramMap.subscribe(params => {
       this.currentCategory = params.get('categoryName')!;
- console.log(this.currentCategory)
+      console.log(this.currentCategory)
       //başlık için
       this.pageTitle = this.categoryTitles[this.currentCategory] || '';
       this.currentCategory = params.get('categoryName')!;
