@@ -275,11 +275,11 @@
     border-left: 5px solid #d32f2f;
     /* Mavi çizgi */
     padding-left: 9px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 
   .content {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 450;
     line-height: 1.5;
     color: rgb(255, 255, 255);
