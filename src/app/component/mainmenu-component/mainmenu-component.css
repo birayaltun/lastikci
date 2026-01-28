@@ -86,11 +86,14 @@
 .mainvideo {
   filter: brightness(70%);
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
+
 
 .helpcontainer {
   display: flex;
@@ -272,14 +275,19 @@
     border-left: 5px solid #d32f2f;
     /* Mavi çizgi */
     padding-left: 9px;
-    margin-bottom: 18px;
+    margin-bottom: 6px;
   }
 
   .content {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 450;
-    line-height: 1.6;
+    line-height: 1.5;
     color: rgb(255, 255, 255);
+  }
+
+  .content a{
+     font-weight: 600;
+     text-shadow: 2px 2px 5px black;
   }
 
   .btn {
