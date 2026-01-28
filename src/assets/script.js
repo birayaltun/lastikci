@@ -4,6 +4,7 @@ function initSlider() {
 const slides = document.querySelector(".slides");
 const slideItems = document.querySelectorAll(".slide");
 const dotsContainer = document.querySelector(".dots");
+const slider = document.querySelector(".slider");
 
 let index = 0;
 let startX = 0;
@@ -22,7 +23,7 @@ const dots = document.querySelectorAll(".dot");
 
 function updateSlider() {
   slides.style.transition = "0.3s";
-  slides.style.transform = `translateX(${-index * 100}%)`;
+slides.style.transform = `translate3d(${-index * 100}%, 0, 0)`;
   updateDots();
 }
 
@@ -69,18 +70,19 @@ document.addEventListener("mouseup", () => {
 });
 
 // --- Touch Mobil ---
-slides.addEventListener("touchstart", (e) => {
+slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   slides.style.transition = "none";
 });
 
-slides.addEventListener("touchmove", (e) => {
+slider.addEventListener("touchmove", (e) => {
+  e.preventDefault(); // 🔥 iOS için şart
   moveX = e.touches[0].clientX - startX;
   slides.style.transform =
-    `translateX(${-index * 100 + (moveX / window.innerWidth) * 100}%)`;
-});
+    `translate3d(${-index * 100 + (moveX / window.innerWidth) * 100}%, 0, 0)`;
+}, { passive: false });
 
-slides.addEventListener("touchend", () => {
+slider.addEventListener("touchend", () => {
   if (moveX < -50) index++;
   if (moveX > 50) index--;
 
