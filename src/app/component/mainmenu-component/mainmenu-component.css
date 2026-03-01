@@ -220,6 +220,13 @@
   background-repeat: no-repeat;
 }
 
+.card4 {
+  background-image: url('/card4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .card-header {
   font-size: 30px;
   font-weight: 700;
@@ -340,7 +347,7 @@
 
   .card1 {
     background-image: url('/card1.jpg');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
