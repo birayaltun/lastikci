@@ -1,44 +1,65 @@
-<div class="helpcontainer" id="helpcontainer">
-    <div class="title">Yol Yardım</div>
-    <div class="content">
+<section class="ra-hero section--dark">
+  <div class="container">
+    <div class="ra-hero__inner" appReveal>
+      <span class="section-kicker">Çanakkale</span>
+      <h1 class="section-title">Yol Yardım</h1>
+      <p class="ra-hero__text">
         Çanakkale içinde lastiğiniz patladıysa en uygun fiyatlarla yanınızdayız.
-        <a href="tel:+90 542 779 19 65">+90 542 779 19 65</a> numaramız üzerinden 7/24 ulaşabilirsiniz.
+        <a [href]="site.phoneHref">{{ site.phoneDisplay }}</a> numaramız üzerinden
+        ulaşabilirsiniz.
+      </p>
+      <a class="btn" [href]="site.phoneHref">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        Hemen Ara
+      </a>
     </div>
-</div>
-<section class="services" id="services">
-    <div class="services-container">
-
-        <div class="services-box">
-            <div class="services-info">
-                <h4>Uygun Fiyatlı Hizmet</h4>
-                <p>Yol yardım ve lastik hizmetlerini bütçenizi zorlamadan sunuyoruz. Şeffaf fiyatlandırma, sürpriz ücret yok.
-                </p>
-            </div>
-        </div>
-
-        <div class="services-box">
-            <div class="services-info">
-                <h4>Hızlı Şekilde Yanınızdayız</h4>
-                <p>Lastik problemi yaşadığınızda tek telefonla yola çıkıyoruz. En kısa sürede bulunduğunuz konuma ulaşıyoruz.
-                </p>
-            </div>
-        </div>
-
-        <div class="services-box">
-            <div class="services-info">
-                <h4>Zamanında Müdahale</h4>
-                <p>Yolda kalmanın ne kadar stresli olduğunu biliyoruz. Planlı ve hızlı müdahale ile sizi yolda bırakmıyoruz.
-                </p>
-            </div>
-        </div>
-
-        <div class="services-box">
-            <div class="services-info">
-                <h4>Profesyonel ve Güvenilir</h4>
-                <p>Alanında deneyimli ekibimizle güvenli ve doğru müdahale sağlıyoruz. Aracınız bize emanet.
-                </p>
-            </div>
-        </div>
-
-    </div>
+  </div>
 </section>
+
+<!-- Nasıl çalışır -->
+<section class="section section--muted">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-kicker">3 adımda</span>
+      <h2 class="section-title">Nasıl çalışır?</h2>
+    </div>
+
+    <ol class="ra-steps">
+      @for (s of steps; track s.no; let i = $index) {
+        <li class="ra-step" appReveal [revealDelay]="i + 1">
+          <span class="ra-step__no">{{ s.no }}</span>
+          <h3 class="ra-step__title">{{ s.title }}</h3>
+          <p class="ra-step__text">{{ s.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- Avantajlar -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-kicker">Neden biz</span>
+      <h2 class="section-title">Yol yardımda farkımız</h2>
+    </div>
+
+    <div class="ra-grid">
+      @for (a of advantages; track a.title; let i = $index) {
+        <app-service-card-component
+          appReveal
+          [revealDelay]="(i % 2) + 1"
+          [icon]="a.icon"
+          [title]="a.title"
+          [text]="a.text"
+        />
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-component
+  kicker="Yolda mısınız?"
+  title="Tek telefon yeterli, gerisini bize bırakın"
+  text="Lastiğiniz indi ya da patladıysa vakit kaybetmeyin. Arayın, en yakın ekibimizi yönlendirelim."
+/>

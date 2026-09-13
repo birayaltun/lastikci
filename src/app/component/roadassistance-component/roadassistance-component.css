@@ -1,210 +1,106 @@
-.helpcontainer {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    padding-top: 100px;
-    padding-left: 30px;
-    padding-bottom: 50px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+/* ---------- Hero ---------- */
+.ra-hero {
+  padding-block: clamp(72px, 12vw, 128px);
+  background:
+    radial-gradient(120% 130% at 0% 0%, rgba(145, 10, 10, .5) 0%, transparent 55%),
+    var(--surface-dark);
 }
 
-.title {
-    margin-right: auto;
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: 600;
-    border-left: 5px solid #d32f2f;
-    /* Mavi çizgi */
-    padding-left: 10px;
-    margin-bottom: 25px;
+.ra-hero__inner {
+  max-width: 640px;
 }
 
-.content {
-    font-size: 30px;
-    font-weight: 450;
-    line-height: 1.6;
-    color: rgb(255, 255, 255);
+.ra-hero__text {
+  margin: 18px 0 28px;
+  font-size: clamp(1.02rem, 2.6vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, .86);
 }
 
-.content a {
-    color: #d32f2f;
-    text-decoration: none;
+.ra-hero__text a {
+  display: inline-block;
+  color: #ff6b6b;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-.content a:hover {
-    text-decoration: underline;
+.ra-hero__text a:hover {
+  text-decoration: underline;
 }
 
-.services {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    background-color: #000000;
-    color: rgb(0, 0, 0);
-    display: flex;
-    margin: 0;
-    padding: 0;
+/* ---------- Adımlar ---------- */
+.ra-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.4vw, 26px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
 }
 
-.services h2 {
-    color: #000000;
-    margin-bottom: 20px;
+.ra-step {
+  position: relative;
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 30px;
-    margin: 50px;
+.ra-step__no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-red);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
 }
 
-.services-box {
-    background-color: #ffffff;
-    height: 300px;
-    border-radius: 10px;
-    border: 5px solid transparent;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
+.ra-step__title {
+  font-size: 1.12rem;
+  font-weight: 800;
 }
 
-.services-box:hover {
-    background-color: #f0f0f0;
-    color: black;
-    transform: scale(1.01);
+.ra-step__text {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: .96rem;
 }
 
-.services-box .services-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 20px 20px;
+/* ---------- Avantaj grid ---------- */
+.ra-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.4vw, 24px);
 }
 
-.services-info h4 {
-    color: #d32f2f;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 1.2;
+/* ============ RESPONSIVE ============ */
+@media (max-width: 860px) {
+  .ra-steps {
+    grid-template-columns: 1fr;
+  }
 }
 
-.services-info p {
-    font-size: 20px;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
-    padding-top: 10px;
+@media (max-width: 640px) {
+  .ra-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 768px) {
-
-    .helpcontainer {
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-        padding-top: 80px;
-        padding-left: 30px;
-        padding-bottom: 50px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-    }
-
-    .title {
-        margin-right: auto;
-        color: #ffffff;
-        font-size: 40px;
-        font-weight: 600;
-        border-left: 5px solid #d32f2f;
-        /* Mavi çizgi */
-        padding-left: 10px;
-        margin-bottom: 25px;
-    }
-
-    .content {
-        font-size: 20px;
-        font-weight: 450;
-        line-height: 1.6;
-        color: rgb(255, 255, 255);
-    }
-
-    .content a {
-        color: #d32f2f;
-        text-decoration: none;
-    }
-
-    .content a:hover {
-        text-decoration: underline;
-    }
-
-    .services {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-        background-color: #000000;
-        color: rgb(0, 0, 0);
-        display: flex;
-        margin: 0;
-        padding: 0;
-        max-width: max-content;
-    }
-
-    .services-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin: 30px;
-    }
-
-    .services-box {
-        display: flex;
-        flex-direction: column;
-        background-color: #ffffff;
-        height: 200px;
-        border-radius: 10px;
-        border: 5px solid transparent;
-        cursor: pointer;
-        transition: 0.4s ease-in-out;
-    }
-
-    .services-box:hover {
-        background-color: #f0f0f0;
-        color: black;
-        transform: scale(1.01);
-    }
-
-    .services-box .services-info {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        max-height: 200px;
-        justify-content: left;
-        align-items: baseline;
-        padding: 0px 20px;
-    }
-
-    .services-info h4 {
-        color: #d32f2f;
-        font-size: 22px;
-        font-weight: 800;
-        line-height: 1.2;
-    }
-
-    .services-info p {
-        font-size: 15px;
-        font-weight: 600;
-        max-height: 100px;
-        line-height: 1.5;
-    }
+@media (max-width: 600px) {
+  .ra-hero .btn {
+    min-height: 40px;
+    padding: 9px 18px;
+    font-size: .84rem;
+    gap: 7px;
+  }
 }

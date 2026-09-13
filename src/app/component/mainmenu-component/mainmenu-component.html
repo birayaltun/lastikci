@@ -1,68 +1,147 @@
-<div class="mainmenu">
+<div class="home">
 
-  <div class="slidercomponent">
-    <div class="slider">
-      <div class="slides">
-        <div class="slide"><img src="/slayt1.jpg"></div>
-        <div class="slide"><img src="/slayt1.jpg"></div>
-        <div class="slide"><img src="/slayt1.jpg"></div>
-      </div>
-      <div class="hemenara">
-        <a href="tel:+905427791965" class="btn">Hemen Ara</a>
-      </div>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__photo" [class.hero__photo--fallback]="heroPhotoFailed">
+      <img src="/hero-photo.jpg" alt="" aria-hidden="true" (error)="onHeroPhotoError()" />
     </div>
-  </div>
+    <span class="hero__accent-line hero__accent-line--1" aria-hidden="true"></span>
+    <span class="hero__accent-line hero__accent-line--2" aria-hidden="true"></span>
 
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="section-kicker">Çanakkale · Can Oto Lastik</span>
+          <h1 class="hero__title">
+            Çanakkale'de lastik, bakım ve yol yardımda
+            <span>güvenilir adresiniz</span>
+          </h1>
 
-  <div class="dotcontainer">
-    <div class="dots"></div>
-  </div>
-
-
-
-
-  <div class="mainbarcomponent">
-    <div class="mainbar">
-      <video class="mainvideo" #bgVideo muted loop playsinline webkit-playsinline preload="metadata">
-        <source src="/mainvideo2.mp4" type="video/mp4" />
-      </video>
-
-
-      <div class="helpcontainer" id="helpcontainer">
-        <div class="title">Yol Yardım</div>
-        <div class="content">
-          Çanakkale içinde lastiğiniz patladıysa en uygun fiyatlarla yanınızdayız.
-          <a href="tel:+90 542 779 19 65">+90 542 779 19 65</a> numaramız üzerinden 7/24 ulaşabilirsiniz.
+          <div class="hero__actions">
+            <a class="btn btn--lg" [href]="site.phoneHref">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              Hemen Ara
+            </a>
+            <button class="btn btn--lg btn--ghost" type="button" (click)="scrollTo('hizmetler')">
+              Hizmetlerimiz
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="service-cards">
-    <div class="service-header">
-      <p>Hizmetlerimiz</p>
+  <!-- ============ YOL YARDIM BANDI ============ -->
+  <section class="roadband">
+    <video
+      class="roadband__video"
+      #bgVideo
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="metadata"
+      aria-hidden="true"
+    >
+      <source src="/mainvideo2.mp4" type="video/mp4" />
+    </video>
+
+    <div class="container">
+      <div class="roadband__inner" appReveal>
+        <span class="section-kicker">Yol Yardım Hattı</span>
+        <h2 class="section-title">Yol Yardım</h2>
+        <p class="roadband__text">
+          Çanakkale içinde lastiğiniz patladıysa en uygun fiyatlarla yanınızdayız.
+          <a [href]="site.phoneHref">{{ site.phoneDisplay }}</a> numaramız üzerinden
+          ulaşabilirsiniz.
+        </p>
+        <a class="btn btn--lg btn--ghost" [href]="site.phoneHref">
+          <i class="fa-solid fa-truck-medical" aria-hidden="true"></i>
+          Yol Yardım Çağır
+        </a>
+      </div>
     </div>
-    <div class="cards">
-      <div class="card card1">
-        <h1 class="card-header">Yağ Değişimi</h1>
-        <p class="card-text">Motor yağının zamanında değiştirilmesi, performansı artırır ve motor ömrünü uzatır. Uygun
-          yağ seçimi ve uzman uygulamayla aracınıza en doğru bakımı sağlıyoruz.</p>
+  </section>
+
+  <!-- ============ HİZMETLER ============ -->
+  <section class="section section--muted" id="hizmetler">
+    <div class="container">
+      <div class="section-head" appReveal>
+        <span class="section-kicker">Ne yapıyoruz</span>
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <p class="section-sub">
+          Aracınızın lastik ve periyodik bakım ihtiyaçları için tek noktadan çözüm.
+        </p>
       </div>
-      <div class="card card2">
-        <h1 class="card-header">Lastik Değişimi</h1>
-        <p class="card-text">Aşınmış lastikler kazalara davetiye çıkarır. Ölçü kontrolü, balans ayarı ve montaj dahil
-          tam kapsamlı lastik değişimi hizmeti sunuyoruz.</p>
-      </div>
-      <div class="card card3">
-        <h1 class="card-header">Yol Yardım</h1>
-        <p class="card-text">Yolda kaldığınızda zaman kaybetmeden direkt biri arayın. Bulunduğunuz konuma hızla ulaşıp
-          gerekli müdahaleyi yapıyoruz.</p>
-      </div>
-      <div class="card card4">
-        <h1 class="card-header">Ürünler</h1>
-        <p class="card-text">Yakıt katkısı, cam temizleyici ve antifriz gibi araç bakım ürünleriyle aracınız için
-          güvenilir ve pratik çözümler sunuyoruz.</p>
+
+      <div class="svc-grid">
+        @for (s of site.services; track s.slug; let i = $index) {
+          <article
+            class="svc"
+            [class.svc--noimg]="failedImages.has(s.slug)"
+            appReveal
+            revealAs="svc"
+            [revealDelay]="(i % 3) + 1"
+          >
+            <div class="svc__media">
+              <img
+                [src]="s.image"
+                [alt]="s.title"
+                loading="lazy"
+                decoding="async"
+                (error)="onServiceImageError(s.slug)"
+              />
+              <span class="svc__fallback" aria-hidden="true"><i [class]="s.icon"></i></span>
+            </div>
+
+            <span class="svc__num" aria-hidden="true">{{ pad(i + 1) }}</span>
+
+            <div class="svc__content">
+              <h3 class="svc__title">{{ s.title }}</h3>
+              <p class="svc__text">{{ s.text }}</p>
+            </div>
+          </article>
+        }
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- ============ NEDEN BİZ ============ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head" appReveal>
+        <span class="section-kicker">Neden Can Oto Lastik</span>
+        <h2 class="section-title">Güvenle bırakabileceğiniz bir servis</h2>
+      </div>
+
+      <ul class="grid grid--reasons">
+        @for (r of reasons; track r.title; let i = $index) {
+          <li class="reason" appReveal [revealDelay]="(i % 3) + 1">
+            <span class="reason__icon" aria-hidden="true"><i [class]="r.icon"></i></span>
+            <div>
+              <h3 class="reason__title">{{ r.title }}</h3>
+              <p class="reason__text">{{ r.text }}</p>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SSS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" appReveal>
+        <span class="section-kicker">Merak edilenler</span>
+        <h2 class="section-title">Sık Sorulan Sorular</h2>
+      </div>
+      <div appReveal>
+        <app-faq-component />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <app-cta-component />
 </div>

@@ -1,17 +1,66 @@
-<div class="helpcontainer" id="helpcontainer">
-  <div class="title">İletişim</div>
-  <div class="adress">
-    <a class="phone" href="tel:+90 542 779 19 65" ><i class="fas fa-phone-alt"></i> +90 542 779 19 65</a>
-    <p>
-      <i class="fas fa-map-marker-alt"></i>
-      Barbaros Sanayi Sitesi Reşat Tabak Caddesi,
-      Yosun Sk. No:17, 17100 Çanakkale
+<section class="contact-hero">
+  <div class="container">
+    <span class="section-kicker">Bize ulaşın</span>
+    <h1 class="section-title">İletişim</h1>
+    <p class="section-sub">
+      Servisimize uğrayın, arayın ya da WhatsApp’tan yazın. Lastik ve bakım
+      ihtiyaçlarınız için buradayız.
     </p>
   </div>
+</section>
 
-</div>
+<div class="container contact-grid">
+  <div class="contact-card card" appReveal>
+    <a class="contact-card__phone" [href]="site.phoneHref">
+      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      {{ site.phoneDisplay }}
+    </a>
 
-<div class="map-wrapper">
-  <iframe [src]="googleMapUrl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-  </iframe>
+    <a class="contact-card__wa" [href]="site.whatsappHref" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      WhatsApp’tan yazın
+    </a>
+
+    <ul class="contact-card__list">
+      <li>
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <div>
+          <span class="contact-card__label">Adres</span>
+          <p>{{ site.address }}</p>
+          <a [href]="site.mapsHref" target="_blank" rel="noopener" class="contact-card__link">
+            Yol tarifi al <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li>
+        <i class="fa-solid fa-clock" aria-hidden="true"></i>
+        <div>
+          <span class="contact-card__label">Çalışma Saatleri</span>
+          @for (h of site.hours; track h.day) {
+            <p><strong>{{ h.day }}:</strong> {{ h.value }}</p>
+          }
+          <p class="contact-card__note">{{ site.hoursNote }}</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="contact-card__social">
+      @for (s of site.social; track s.label) {
+        <a [href]="s.href" target="_blank" rel="noopener" [attr.aria-label]="s.label">
+          <i [class]="s.icon" aria-hidden="true"></i>
+        </a>
+      }
+    </div>
+  </div>
+
+  <div class="contact-map">
+    <iframe
+      [src]="googleMapUrl"
+      title="Can Oto Lastik konum haritası"
+      style="border: 0"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
 </div>

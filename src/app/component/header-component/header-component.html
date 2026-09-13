@@ -1,33 +1,50 @@
-<header class="company-header">
+<header class="company-header" [class.is-scrolled]="isScrolled">
 
-  <div class="header-top">
-    <div class="marquee">
-      <span>📢 Dikkat! Lastik değişiminde kış ayı kampanyası devam ediyor!</span>
-    </div>
-  </div>
+  <div class="navbar">
+    <a class="logo" [routerLink]="['/anasayfa']" (click)="closeMenu()" aria-label="Can Oto Lastik ana sayfa">
+      <img src="/canlogo-header-white.png" alt="Can Oto Lastik" />
+    </a>
 
-  <div class="headerBottom">
-
-    <div class="logo">
-      <img src="/canlogo.png" [routerLink]="['/anasayfa']" (click)="closeMenu() " style="cursor:pointer;" alt="LOGO">
-    </div>
-
-    <!-- HAMBURGER MENU ICON -->
-    <div class="hamburger" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- MENU LINKS -->
-    <div class="menu-links" [class.open]="isMenuOpen">
-      <ul>
-        <li [routerLink]="['/anasayfa']" (click)="closeMenu()">Anasayfa</li>
-        <li [routerLink]="['/wheels', 'categories', 'lassa']" (click)="closeMenu()">Lastikler</li>
-        <li [routerLink]="['/yolyardım']" (click)="closeMenu()">Yol Yardım</li>
-        <li [routerLink]="['/iletisim']" (click)="closeMenu()">İletişim</li>
+    <nav class="nav" [class.open]="isMenuOpen" aria-label="Ana menü">
+      <ul class="nav__links">
+        <li>
+          <a [routerLink]="['/anasayfa']" routerLinkActive="active" (click)="closeMenu()">Anasayfa</a>
+        </li>
+        <li>
+          <a [routerLink]="['/lastikler']" routerLinkActive="active" (click)="closeMenu()">Lastikler</a>
+        </li>
+        <li>
+          <a [routerLink]="['/yol-yardim']" routerLinkActive="active" (click)="closeMenu()">Yol Yardım</a>
+        </li>
+        <li>
+          <a [routerLink]="['/iletisim']" routerLinkActive="active" (click)="closeMenu()">İletişim</a>
+        </li>
       </ul>
-    </div>
 
+      <a class="nav__cta" [href]="site.phoneHref" (click)="closeMenu()">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        <span>{{ site.phoneDisplay }}</span>
+      </a>
+    </nav>
+
+    <button
+      type="button"
+      class="hamburger"
+      [class.is-active]="isMenuOpen"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Menüyü aç/kapat"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
+  <button
+    type="button"
+    class="nav-backdrop"
+    [class.show]="isMenuOpen"
+    tabindex="-1"
+    aria-hidden="true"
+    (click)="closeMenu()"
+  ></button>
 </header>

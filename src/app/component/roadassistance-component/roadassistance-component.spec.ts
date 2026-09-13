@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { RoadassistanceComponent } from './roadassistance-component';
 
@@ -8,7 +9,8 @@ describe('RoadassistanceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RoadassistanceComponent]
+      imports: [RoadassistanceComponent],
+      providers: [provideRouter([])],
     })
     .compileComponents();
 

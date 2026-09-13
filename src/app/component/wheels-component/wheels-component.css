@@ -1,217 +1,228 @@
-/* Genel sayfa */
-main {
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  background-color: #f7f8fa;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+:host {
+  display: block;
+  background: var(--surface-muted);
 }
 
-/* Wrapper */
-.menu-wrapper {
-  display: flex;
-  max-width: 1200px;
-  margin: 60px auto;
-  gap: 30px;
-  padding: 0 20px;
-  align-items: flex-start;
+/* ---------- Sayfa başlığı ---------- */
+.wheels-hero {
+  padding-block: clamp(36px, 7vw, 64px) clamp(24px, 4vw, 36px);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 
-/* Sidebar */
-.sidebar {
-  width: 220px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  flex-shrink: 0;
+/* ---------- Düzen ---------- */
+.wheels-layout {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: clamp(20px, 3vw, 38px);
+  padding-block: clamp(28px, 5vw, 52px);
+  align-items: start;
 }
 
-.sidebar ul {
+/* ---------- Marka filtresi ---------- */
+.brands {
+  position: sticky;
+  top: 128px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.brands__label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.brands__list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
-.sidebar-btn {
+.brands__btn {
   display: block;
-  width: 100%;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 8px;
-  background-color: #f0f0f0;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.sidebar-btn:hover {
-  background-color: #910a0a;
-  color: #f0f0f0;
-}
-
-.sidebar-btn.active {
-  background-color: #910a0a;
-  color: #f0f0f0;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  color: var(--ink);
   font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: background .2s var(--ease), color .2s var(--ease);
 }
 
-/* Main content */
-.menu-content {
-  background-color: #e5e5e5;
-  padding: 15px;
-  border-radius: 8px;
-  flex: 1;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 900px;
+.brands__btn:hover {
+  background: #f0d9d9;
+  color: var(--brand-red);
 }
 
-/* Başlık */
-.category-title h2 {
-  margin-top: 0;
-  margin-bottom: 25px;
-  color: #910a0a;
-  font-size: 28px;
+.brands__btn.active {
+  background: var(--brand-red);
+  color: #fff;
 }
 
-/* Ürün grid */
-.products-grid {
+/* ---------- İçerik ---------- */
+.wheels-content__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.wheels-content__head h2 {
+  font-size: clamp(1.4rem, 3.4vw, 1.9rem);
+  color: var(--brand-red);
+}
+
+.wheels-content__count {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.tyre-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: clamp(14px, 2vw, 22px);
+  min-width: 0;
 }
 
-/* Ürün kartı */
-.product-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px 10px;
+/* ---------- Ürün kartı ---------- */
+.tyre-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
 }
 
-.product-card img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-/* Hover */
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-/* Textler */
-.product-title {
-  margin: 0 0 10px 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.product-description {
-  flex: 1;
-  margin: 0 0 20px 0;
-  font-size: 0.8rem;
-  color: #666;
-  line-height: 1.5;
-}
-
-.product-footer {
+.tyre-card__media {
+  position: relative;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #fff;
+  aspect-ratio: 4 / 3;
 }
 
-.product-price {
-  font-size: 18px;
+.tyre-card__media img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.tyre-card__fallback {
+  display: none;
+}
+
+.tyre-card__media--noimg {
+  background: var(--surface-muted);
+}
+
+.tyre-card__media--noimg img {
+  display: none;
+}
+
+.tyre-card__media--noimg .tyre-card__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  color: var(--ink-faint);
+}
+
+.tyre-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px 18px;
+  border-top: 1px solid var(--line);
+}
+
+.tyre-card__badge {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: #f0d9d9;
+  color: var(--brand-red);
+  font-size: .72rem;
   font-weight: 700;
-  color: #910a0a;
+  letter-spacing: .02em;
 }
 
-/* Responsive */
-@media (max-width: 1050px) {
-  .menu-wrapper {
-    flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    padding: 0px;
-    overflow: hidden;
+.tyre-card__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.tyre-card__foot {
+  margin-top: auto;
+}
+
+.tyre-card__price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--brand-red);
+}
+
+.tyre-card__price--call {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1000px) {
+  .wheels-layout {
+    grid-template-columns: 1fr;
   }
 
-  .sidebar {
-    display: none;
-    width: 100%;
-    display: flex;
-    margin-bottom: 20px;
-    overflow-x: scroll;
-    min-width: auto;
-    scroll-behavior: smooth
+  .brands {
+    position: static;
+    padding: 14px;
   }
 
-  .sidebar ul {
+  .brands__list {
     flex-direction: row;
     gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
   }
 
-  .products-grid {
+  .brands__btn {
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+
+  .tyre-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .menu-wrapper {
-    width: 100%;
-    max-width: 100%;
+@media (max-width: 560px) {
+  .tyre-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
-  .menu-content {
-    width: 80%;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .tyre-card__body {
+    padding: 12px 12px 14px;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card img {
-    max-width: 270px;
-  }
-}
-
-/* Animasyon */
-.products-grid .product-card {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.5s ease-out forwards;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .tyre-card__title {
+    font-size: .98rem;
   }
 }

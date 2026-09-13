@@ -1,0 +1,20 @@
+<section class="cta section--dark">
+  <div class="container cta__inner">
+    <div class="cta__copy">
+      <span class="section-kicker">{{ kicker }}</span>
+      <h2 class="section-title">{{ title }}</h2>
+      <p class="section-sub">{{ text }}</p>
+    </div>
+
+    <div class="cta__actions">
+      <a class="btn btn--lg" [href]="site.phoneHref">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        {{ site.phoneDisplay }}
+      </a>
+      <a class="btn btn--lg btn--ghost" [href]="site.whatsappHref" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,22 +1,34 @@
 <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="/Can Logo Beyaz.png" alt="Can Logo" />
-    </div>
+  <div class="container footer__grid">
 
-    <div class="footer-info">
+    <div class="footer__brand">
+      <img src="/Can Logo Beyaz.png" alt="Can Oto Lastik" />
       <p>
-        <i class="fas fa-map-marker-alt"></i>
-        Barbaros Sanayi Sitesi Reşat Tabak Caddesi,
-        Yosun Sk. No:17, 17100 Çanakkale
+        Çanakkale’de lastik değişimi ve tamiri, yağ değişimi, araç bakım ürünleri
+        ve yol yardım hizmeti.
       </p>
-      <a href="tel:+90 542 779 19 65" ><i class="fas fa-phone-alt"></i> +90 542 779 19 65</a>
     </div>
 
-    <div class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61567683788593"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/canotolastikci/"><i class="fab fa-instagram"></i></a>
-      <a href="https://share.google/qkCQx3paLdduMLDhv"><i class="fab fa-google"></i></a>
+    <div class="footer__col footer__contact">
+      <h3>İletişim</h3>
+      <a [href]="site.phoneHref" class="footer__phone">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i> {{ site.phoneDisplay }}
+      </a>
+      <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ site.address }}</p>
+      @for (h of site.hours; track h.day) {
+        <p class="footer__hours">{{ h.day }}: <strong>{{ h.value }}</strong></p>
+      }
+      <div class="footer__social">
+        @for (s of site.social; track s.label) {
+          <a [href]="s.href" target="_blank" rel="noopener" [attr.aria-label]="s.label">
+            <i [class]="s.icon" aria-hidden="true"></i>
+          </a>
+        }
+      </div>
     </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>2025 Vane Ajans Tüm Hakları Saklıdır</span>
   </div>
 </footer>

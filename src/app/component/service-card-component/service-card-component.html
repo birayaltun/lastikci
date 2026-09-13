@@ -1,0 +1,15 @@
+<article class="service-card card card--hover">
+  <span class="service-card__icon" aria-hidden="true">
+    <i [class]="icon"></i>
+  </span>
+
+  <h3 class="service-card__title">{{ title }}</h3>
+  <p class="service-card__text">{{ text }}</p>
+
+  @if (link) {
+    <a class="service-card__link" [routerLink]="link">
+      {{ linkLabel }}
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+  }
+</article>

@@ -1,60 +1,64 @@
-<div class="menu-wrapper">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <ul>
-            <li>
-                <button [routerLink]="['/wheels', 'categories', 'lassa']"
-                    [ngClass]="{ 'active': currentCategory === 'lassa' }" class="sidebar-btn">
-                    Lassa
-                </button>
-            </li>
+<section class="wheels-hero">
+  <div class="container">
+    <span class="section-kicker">Lastik Kataloğu</span>
+    <h1 class="section-title">Lastikler</h1>
+    <p class="section-sub">
+      Çalıştığımız markalardan yaz, kış ve dört mevsim lastik seçenekleri. Aracınıza uygun
+      ebat ve fiyat için bizi arayın; stok ve montaj randevusu için yardımcı olalım.
+    </p>
+  </div>
+</section>
 
-            <li>
-                <button [routerLink]="['/wheels', 'categories', 'continental']"
-                    [ngClass]="{ 'active': currentCategory === 'continental' }" class="sidebar-btn">
-                    Continental
-                </button>
-            </li>
+<div class="container wheels-layout">
+  <!-- Marka filtresi -->
+  <aside class="brands" aria-label="Marka seçimi">
+    <span class="brands__label">Markalar</span>
+    <ul class="brands__list">
+      @for (b of brands; track b.slug) {
+        <li>
+          <a
+            class="brands__btn"
+            [class.active]="currentCategory === b.slug"
+            [routerLink]="['/lastikler', b.slug]"
+          >
+            {{ b.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </aside>
 
-            <li>
-                <button [routerLink]="['/wheels', 'categories', 'laufenn']"
-                    [ngClass]="{ 'active': currentCategory === 'laufenn' }" class="sidebar-btn">
-                    Laufenn
-                </button>
-            </li>
+  <!-- Ürünler -->
+  <main class="wheels-content">
+    <div class="wheels-content__head">
+      <h2>{{ pageTitle }}</h2>
+      <span class="wheels-content__count">{{ products.length }} model</span>
+    </div>
 
-            <li>
-                <button [routerLink]="['/wheels', 'categories', 'matador']"
-                    [ngClass]="{ 'active': currentCategory === 'matador' }" class="sidebar-btn">
-                    Matador
-                </button>
-            </li>
-
-            <li>
-                <button [routerLink]="['/wheels', 'categories', 'goodyear']"
-                    [ngClass]="{ 'active': currentCategory === 'goodyear' }" class="sidebar-btn">
-                    GoodYear
-                </button>
-            </li>
-
-        </ul>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="menu-content">
-        <div class="category-title">
-            <h2>{{ pageTitle }}</h2>
-        </div>
-
-        <div class="products-grid">
-            <div class="product-card" *ngFor="let p of products">
-                <img [src]="p.img" alt="">
-                <h3 class="product-title">{{ p.title }}</h3>
-                <p class="product-description">{{ p.desc }}</p>
-                <div class="product-footer">
-                    <span class="product-price">₺{{ p.price }}</span>
-                </div>
+    <div class="tyre-grid">
+      @for (p of products; track p.title; let i = $index) {
+        <article class="tyre-card card card--hover" appReveal [revealDelay]="(i % 3) + 1">
+          <div class="tyre-card__media" [class.tyre-card__media--noimg]="failedImages.has(p.title)">
+            <img [src]="p.img" [alt]="p.title" loading="lazy" (error)="onImageError(p.title)" />
+            <span class="tyre-card__fallback" aria-hidden="true"><i class="fa-solid fa-circle-notch"></i></span>
+          </div>
+          <div class="tyre-card__body">
+            @if (p.desc && p.desc !== '...') {
+              <span class="tyre-card__badge">{{ p.desc }}</span>
+            }
+            <h3 class="tyre-card__title">{{ p.title }}</h3>
+            <div class="tyre-card__foot">
+              <span class="tyre-card__price tyre-card__price--call">Fiyat için arayın</span>
             </div>
-        </div>
-    </main>
+          </div>
+        </article>
+      }
+    </div>
+  </main>
 </div>
+
+<app-cta-component
+  kicker="Ebat & stok"
+  title="Aradığınız lastiği bulamadınız mı?"
+  text="Tüm ebatları listelemiyoruz. Aracınızın lastik ölçüsünü söyleyin, uygun seçenekleri ve fiyatı hemen paylaşalım."
+/>

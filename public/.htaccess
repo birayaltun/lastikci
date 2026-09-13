@@ -1,0 +1,39 @@
+# Can Oto Lastik Çanakkale — Angular SPA Apache yapılandırması
+
+# HTTPS zorunlu yönlendirme
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # www olmayan adrese yönlendirme (istenirse www lehine değiştirilebilir)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # Gerçek dosya/klasörler doğrudan sunulsun
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Diğer tüm route'lar Angular'ın index.html'ine düşsün (client-side routing)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Sıkıştırma
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Tarayıcı önbellekleme
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
