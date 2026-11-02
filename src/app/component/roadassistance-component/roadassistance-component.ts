@@ -53,6 +53,6 @@ export class RoadassistanceComponent implements OnInit {
   readonly steps = [
     { no: '1', title: 'Bizi arayın', text: 'Yol yardım hattımızı arayın.' },
     { no: '2', title: 'Konumunuzu paylaşın', text: 'Bulunduğunuz yeri ve aracınızın durumunu iletin.' },
-    { no: '3', title: 'Ekip yola çıkar', text: 'En yakın ekibimiz konumunuza gelip gerekli müdahaleyi yapar.' },
+    { no: '3', title: 'Yardıma gelelim', text: 'En kısa sürede konumunuza gelip gerekli müdahaleyi yaparız.' },
   ];
 }

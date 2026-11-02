@@ -261,10 +261,14 @@
 }
 
 .hero__title {
-  margin-top: 22px;
   font-size: clamp(1.9rem, 4.8vw, 3.1rem);
-  line-height: 1.12;
+  line-height: 1.32;
   text-wrap: balance;
+}
+
+.hero__title span {
+  display: block;
+  color: var(--accent-red);
 }
 
 @media (min-width: 1024px) {
@@ -272,15 +276,10 @@
     font-size: clamp(2.3rem, 3.6vw, 3.4rem);
   }
 
-  /* Kırmızı kısım ayrı satıra zorlanmasın, balance 3 satıra dağıtsın */
+  /* Kırmızı kısım ayrı satıra zorlanmasın, balance dengeli dağıtsın */
   .hero__title span {
     display: inline;
   }
-}
-
-.hero__title span {
-  display: block;
-  color: #ff5a5a;
 }
 
 .hero__actions {
@@ -341,7 +340,7 @@
 
 .roadband__text a {
   display: inline-block;
-  color: #ff6b6b;
+  color: var(--accent-red);
   font-weight: 700;
   white-space: nowrap;
   text-decoration: none;

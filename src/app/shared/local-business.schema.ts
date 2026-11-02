@@ -60,7 +60,7 @@ export function buildLocalBusinessSchema() {
     '@type': 'AutomotiveBusiness',
     '@id': `${SITE_URL}/#business`,
     name: SITE.name,
-    image: `${SITE_URL}/hero-photo.jpg`,
+    image: `${SITE_URL}/hero-photo.webp`,
     telephone: SITE.phoneDisplay,
     address: {
       '@type': 'PostalAddress',

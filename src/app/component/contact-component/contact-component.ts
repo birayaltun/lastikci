@@ -21,7 +21,7 @@ export class ContactComponent implements OnInit {
     this.seo.set({
       title: 'İletişim | Can Oto Lastik Çanakkale',
       description:
-        `Can Oto Lastik adres, telefon ve çalışma saatleri. ${SITE.address}. Hemen arayın: ${SITE.phoneDisplay}`,
+        `Can Oto Lastik adres, telefon ve çalışma saatleri. Barbaros Sanayi Sitesi, Çanakkale. Hemen arayın: ${SITE.phoneDisplay}`,
       path: '/iletisim',
     });
   }

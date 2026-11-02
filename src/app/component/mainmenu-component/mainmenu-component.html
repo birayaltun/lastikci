@@ -3,7 +3,7 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero__photo" [class.hero__photo--fallback]="heroPhotoFailed">
-      <img src="/hero-photo.jpg" alt="" aria-hidden="true" (error)="onHeroPhotoError()" />
+      <img src="/hero-photo.webp" alt="" aria-hidden="true" (error)="onHeroPhotoError()" />
     </div>
     <span class="hero__accent-line hero__accent-line--1" aria-hidden="true"></span>
     <span class="hero__accent-line hero__accent-line--2" aria-hidden="true"></span>
@@ -11,10 +11,9 @@
     <div class="container">
       <div class="hero__inner">
         <div class="hero__copy">
-          <span class="section-kicker">Çanakkale · Can Oto Lastik</span>
           <h1 class="hero__title">
-            Çanakkale'de lastik, bakım ve yol yardımda
-            <span>güvenilir adresiniz</span>
+            Çanakkale'de lastik, yağ ve yol yardımda
+            güvenilir adresiniz <span>Can Oto Lastik</span>
           </h1>
 
           <div class="hero__actions">
@@ -87,7 +86,7 @@
             <div class="svc__media">
               <img
                 [src]="s.image"
-                [alt]="s.title"
+                [alt]="s.imageAlt"
                 loading="lazy"
                 decoding="async"
                 (error)="onServiceImageError(s.slug)"

@@ -210,6 +210,13 @@
     z-index: 3;
   }
 
+  /* Menü açıkken logo, sağdan kayan beyaz panelin üstünde asılı kalmasın */
+  .company-header.menu-open .logo {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s var(--ease);
+  }
+
   .hamburger {
     display: flex;
     margin-left: 4px;

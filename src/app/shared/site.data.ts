@@ -10,6 +10,8 @@ export interface SiteService {
   icon: string;
   /** public/ altındaki hizmet görseli — 1200×1500 px (4:5) JPG önerilir */
   image: string;
+  /** Görsel SEO için konum/bağlam içeren alt metni */
+  imageAlt: string;
   text: string;
 }
 
@@ -50,35 +52,40 @@ export const SITE = {
       slug: 'lastik-degisimi',
       title: 'Lastik Değişimi',
       icon: 'fa-solid fa-gears',
-      image: '/hizmet-lastik-degisimi.jpg',
+      image: '/hizmet-lastik-degisimi.webp',
+      imageAlt: 'Çanakkale Can Oto Lastik\'te lastik değişimi ve montaj hizmeti',
       text: 'Ölçü kontrolü, balans ayarı ve montaj dahil tam kapsamlı lastik değişimi. Yaz, kış ve dört mevsim lastikleri.',
     },
     {
       slug: 'lastik-tamiri',
       title: 'Lastik Tamiri',
       icon: 'fa-solid fa-screwdriver-wrench',
-      image: '/hizmet-lastik-tamiri.jpg',
+      image: '/hizmet-lastik-tamiri.webp',
+      imageAlt: 'Çanakkale\'de patlak lastik tamiri yapan Can Oto Lastik ustası',
       text: 'Patlak ve inen lastiklerde hızlı, güvenli tamir. Uygun durumda yamalama, gerekiyorsa açık öneri.',
     },
     {
       slug: 'yol-yardim',
       title: 'Yol Yardım',
       icon: 'fa-solid fa-truck-medical',
-      image: '/hizmet-yol-yardim.jpg',
+      image: '/hizmet-yol-yardim.webp',
+      imageAlt: 'Çanakkale lastik yol yardım hizmet aracı',
       text: 'Çanakkale içinde yolda kaldığınızda tek telefonla yanınızdayız.',
     },
     {
       slug: 'yag-degisimi',
       title: 'Yağ Değişimi',
       icon: 'fa-solid fa-oil-can',
-      image: '/hizmet-yag-degisimi.jpg',
+      image: '/hizmet-yag-degisimi.webp',
+      imageAlt: 'Çanakkale Can Oto Lastik\'te motor yağı değişimi',
       text: 'Doğru yağ seçimi ve uzman uygulamayla motor ömrünü uzatan, performansı koruyan periyodik bakım.',
     },
     {
       slug: 'urunler',
       title: 'Ürünler',
       icon: 'fa-solid fa-box-open',
-      image: '/hizmet-urunler.jpg',
+      image: '/hizmet-urunler.webp',
+      imageAlt: 'Can Oto Lastik araç bakım ürünleri: yakıt katkısı, cam suyu, antifriz',
       text: 'Yakıt katkısı, cam suyu, antifriz gibi araç bakım ürünleriyle pratik ve güvenilir çözümler.',
     },
   ] as SiteService[],

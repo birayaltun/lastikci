@@ -1,8 +1,8 @@
-<header class="company-header" [class.is-scrolled]="isScrolled">
+<header class="company-header" [class.is-scrolled]="isScrolled" [class.menu-open]="isMenuOpen">
 
   <div class="navbar">
     <a class="logo" [routerLink]="['/anasayfa']" (click)="closeMenu()" aria-label="Can Oto Lastik ana sayfa">
-      <img src="/canlogo-header-white.png" alt="Can Oto Lastik" />
+      <img src="/canlogo-header-white.webp" alt="Can Oto Lastik" />
     </a>
 
     <nav class="nav" [class.open]="isMenuOpen" aria-label="Ana menü">

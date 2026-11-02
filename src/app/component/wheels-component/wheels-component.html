@@ -39,7 +39,7 @@
       @for (p of products; track p.title; let i = $index) {
         <article class="tyre-card card card--hover" appReveal [revealDelay]="(i % 3) + 1">
           <div class="tyre-card__media" [class.tyre-card__media--noimg]="failedImages.has(p.title)">
-            <img [src]="p.img" [alt]="p.title" loading="lazy" (error)="onImageError(p.title)" />
+            <img [src]="p.img" [alt]="pageTitle + ' ' + p.title + ' lastik'" loading="lazy" (error)="onImageError(p.title)" />
             <span class="tyre-card__fallback" aria-hidden="true"><i class="fa-solid fa-circle-notch"></i></span>
           </div>
           <div class="tyre-card__body">

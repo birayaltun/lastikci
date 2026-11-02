@@ -52,23 +52,23 @@ export class WheelsComponent implements OnInit {
 
   private readonly categories: Record<string, Tyre[]> = {
     lassa: [
-      { title: 'Snoways 4', img: '/lassasnoways4.png', desc: 'Kış lastiği' },
-      { title: 'Revola', img: '/revola.png', desc: 'Yaz lastiği' },
-      { title: 'Greenways', img: '/greenways.png', desc: 'Yaz lastiği' },
-      { title: 'Iceways 2', img: '/iceways2.png', desc: 'Kış lastiği' },
-      { title: 'Multiways 2', img: '/multiways.png', desc: 'Dört mevsim' },
+      { title: 'Snoways 4', img: '/lassasnoways4.webp', desc: 'Kış lastiği' },
+      { title: 'Revola', img: '/revola.webp', desc: 'Yaz lastiği' },
+      { title: 'Greenways', img: '/greenways.webp', desc: 'Yaz lastiği' },
+      { title: 'Iceways 2', img: '/iceways2.webp', desc: 'Kış lastiği' },
+      { title: 'Multiways 2', img: '/multiways.webp', desc: 'Dört mevsim' },
     ],
     continental: [
-      { title: 'WinterContact', img: '/wintercontact.png', desc: 'Kış lastiği' },
-      { title: 'UltraContact', img: '/ultracontact.png', desc: 'Yaz lastiği' },
-      { title: 'EcoContact 6', img: '/ecocontact6.png', desc: 'Yaz lastiği' },
-      { title: 'SportContact 7', img: '/sportcontact7.png', desc: 'Performans' },
+      { title: 'WinterContact', img: '/wintercontact.webp', desc: 'Kış lastiği' },
+      { title: 'UltraContact', img: '/ultracontact.webp', desc: 'Yaz lastiği' },
+      { title: 'EcoContact 6', img: '/ecocontact6.webp', desc: 'Yaz lastiği' },
+      { title: 'SportContact 7', img: '/sportcontact7.webp', desc: 'Performans' },
     ],
     laufenn: [
-      { title: 'S Fit EQ', img: '/laufenn-s-fit-eq.jpg', desc: 'Yaz lastiği' },
-      { title: 'G Fit EQ', img: '/laufenn-g-fit-eq.jpg', desc: 'Yaz lastiği' },
-      { title: 'I Fit+', img: '/laufenn-i-fit-plus.png', desc: 'Kış lastiği' },
-      { title: 'G Fit 4S', img: '/laufenn-g-fit-4s.jpg', desc: 'Dört mevsim' },
+      { title: 'S Fit EQ', img: '/laufenn-s-fit-eq.webp', desc: 'Yaz lastiği' },
+      { title: 'G Fit EQ', img: '/laufenn-g-fit-eq.webp', desc: 'Yaz lastiği' },
+      { title: 'I Fit+', img: '/laufenn-i-fit-plus.webp', desc: 'Kış lastiği' },
+      { title: 'G Fit 4S', img: '/laufenn-g-fit-4s.webp', desc: 'Dört mevsim' },
     ],
     matador: [
       { title: 'MP47 Hectorra 3', img: '/matador-mp47-hectorra-3.webp', desc: 'Yaz lastiği' },
@@ -77,7 +77,7 @@ export class WheelsComponent implements OnInit {
     ],
     goodyear: [
       { title: 'EfficientGrip Performance', img: '/goodyear-efficientgrip-performance.png', desc: 'Yaz lastiği' },
-      { title: 'UltraGrip Performance+', img: '/goodyear-ultragrip-performance-plus.png', desc: 'Kış lastiği' },
+      { title: 'UltraGrip Performance+', img: '/goodyear-ultragrip-performance-plus.webp', desc: 'Kış lastiği' },
       { title: 'Vector 4Seasons', img: '/goodyear-vector-4seasons.png', desc: 'Dört mevsim' },
     ],
   };
